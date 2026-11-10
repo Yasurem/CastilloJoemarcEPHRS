@@ -28,7 +28,7 @@ class Program
         while (running)
         {
             Console.Clear();
-            Console.WriteLine("=== EMPLOYEE PAYROLL & HR MANAGEMENT SYSTEM [Main v1.0] ===");
+            Console.WriteLine("=== EMPLOYEE PAYROLL & HR MANAGEMENT SYSTEM ===");
             Console.WriteLine("1. Create (Add Employee)");
             Console.WriteLine("2. Read (View All Employees)");
             Console.WriteLine("3. Search / Filter Employees");
@@ -91,11 +91,15 @@ class Program
             return;
         }
 
-        Console.WriteLine($"{"ID",-5} | {"First",-8} | {"Last",-10} | {"Dept",-8} | {"Job Title",-17} | {"Salary",-10} | {"Tax",-5} | {"Hire Date",-10} | {"Active",-6} | {"Email"}");
+        Console.WriteLine(
+            $"{"ID",-5} | {"First",-8} | {"Last",-10} | {"Dept",-8} | {"Job Title",-17} | " +
+            $"{"Salary",-10} | {"Tax",-5} | {"Hire Date",-10} | {"Active",-6} | {"Email"}");
         Console.WriteLine(new string('-', 120));
         foreach (var e in rows)
         {
-            Console.WriteLine($"{e.Id,-5} | {e.FirstName,-8} | {e.LastName,-10} | {e.Department,-8} | {e.JobTitle,-17} | ${e.MonthlySalary,-9:F2} | {e.TaxRate,-5:P0} | {e.HireDate:yyyy-MM-dd} | {e.IsActive,-6} | {e.Email}");
+            Console.WriteLine(
+                $"{e.Id,-5} | {e.FirstName,-8} | {e.LastName,-10} | {e.Department,-8} | {e.JobTitle,-17} | " +
+                $"${e.MonthlySalary,-9:F2} | {e.TaxRate,-5:P0} | {e.HireDate:yyyy-MM-dd} | {e.IsActive,-6} | {e.Email}");
         }
     }
 
